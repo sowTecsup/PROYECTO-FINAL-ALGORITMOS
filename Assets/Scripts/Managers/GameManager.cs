@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Referencias")]
     public AbilitySystem abilitySystem;
-    public PlayerStats playerStats; // 👈 referencia PlayerStats desde el inspector
+    public PlayerStats playerStats; 
 
     void Awake()
     {

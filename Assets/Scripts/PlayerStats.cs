@@ -33,7 +33,7 @@ public class PlayerStats : MonoBehaviour
         experienceToNext = Mathf.RoundToInt(experienceToNext * 1.5f);
         skillPoints++;
 
-        Debug.Log($"🎉 Subiste a nivel {playerLevel}. Puntos disponibles: {skillPoints}");
+        Debug.Log($" Subiste a nivel {playerLevel}. Puntos disponibles: {skillPoints}");
     }
 
     public bool SpendSkillPoint(string abilityKey)
@@ -43,12 +43,12 @@ public class PlayerStats : MonoBehaviour
             if (gm.abilitySystem.TryUpgradeAbility(abilityKey, playerLevel))
             {
                 skillPoints--;
-                Debug.Log($"✅ Mejoraste {abilityKey}. Puntos restantes: {skillPoints}");
+                Debug.Log($"Mejoraste {abilityKey}. Puntos restantes: {skillPoints}");
                 return true;
             }
             else
             {
-                Debug.Log("❌ No puedes mejorar esa habilidad (nivel requerido o máximo alcanzado).");
+                Debug.Log(" No puedes mejorar esa habilidad (nivel requerido o máximo alcanzado).");
             }
         }
         return false;

@@ -16,16 +16,15 @@ public class PlayerController : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         cam = Camera.main;
-        playerStats = GameManager.Instance.playerStats; // referencia PlayerStats
+        playerStats = GameManager.Instance.playerStats; 
     }
 
     void Update()
     {
-        // 🔹 Test: presiona K para ganar XP
         if (Keyboard.current.kKey.wasPressedThisFrame)
         {
             if (playerStats != null)
-                playerStats.AddExperience(50); // XP de prueba
+                playerStats.AddExperience(50);
         }
     }
 

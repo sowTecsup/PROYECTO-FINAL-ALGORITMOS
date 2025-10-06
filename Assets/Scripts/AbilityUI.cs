@@ -6,7 +6,7 @@ using System.Collections;
 public class AbilityUI : MonoBehaviour
 {
     [Header("Configuración")]
-    public string abilityKey = "Q";   // Q, W, E, R
+    public string abilityKey = "Q";  
     public Button upgradeButton;
     public TextMeshProUGUI levelText;
 

@@ -31,19 +31,19 @@ public class Ability
         if (CanCast())
         {
             lastCastTime = Time.time;
-            Debug.Log($"⚔️ {Name} lanzada (Nivel {Level})");
+            Debug.Log($" {Name} lanzada (Nivel {Level})");
             OnCast?.Invoke();
         }
         else
         {
             if (Locked || Level == 0)
             {
-                Debug.Log($"🔒 {Name} está bloqueada.");
+                Debug.Log($" {Name} está bloqueada.");
             }
             else
             {
                 float remaining = (lastCastTime + Cooldown) - Time.time;
-                Debug.Log($"⏳ {Name} en cooldown. Faltan {remaining:F1}s");
+                Debug.Log($" {Name} en cooldown. Faltan {remaining:F1}s");
             }
         }
     }
@@ -53,8 +53,8 @@ public class Ability
         if (Locked)
         {
             Locked = false;
-            Level = 1; // 👈 al desbloquear empieza en nivel 1
-            Debug.Log($"🔓 {Name} desbloqueada en nivel {Level}!");
+            Level = 1; 
+            Debug.Log($" {Name} desbloqueada en nivel {Level}!");
             return;
         }
 
@@ -62,11 +62,11 @@ public class Ability
         {
             Level++;
             Cooldown = Mathf.Max(0.5f, Cooldown * 0.9f);
-            Debug.Log($"⬆️ {Name} mejorada a nivel {Level}, CD: {Cooldown:F1}s");
+            Debug.Log($" {Name} mejorada a nivel {Level}, CD: {Cooldown:F1}s");
         }
         else
         {
-            Debug.Log($"❌ {Name} ya está al máximo nivel!");
+            Debug.Log($" {Name} ya está al máximo nivel!");
         }
     }
 }

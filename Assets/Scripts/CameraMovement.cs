@@ -35,7 +35,7 @@ public class CameraMovement : MonoBehaviour
     [Tooltip("Referencia al jugador (arrastrar en el Inspector)")]
     public Transform player;
 
-    private bool freeMode = false; // 🔄 alterna entre libre y LoL
+    private bool freeMode = false; 
 
     void Start()
     {
@@ -45,7 +45,7 @@ public class CameraMovement : MonoBehaviour
             if (p != null) player = p.transform;
         }
 
-        CenterAtPlayer(); // ✅ al iniciar se centra
+        CenterAtPlayer();
     }
 
     void FixedUpdate()
@@ -53,16 +53,16 @@ public class CameraMovement : MonoBehaviour
         HandleZoom();
 
         if (freeMode)
-            MoveCamera(); // 🔄 modo libre
+            MoveCamera(); 
         else
-            CenterAtPlayer(); // 🔄 modo LoL
+            CenterAtPlayer(); 
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            freeMode = !freeMode; // ✅ alternar con Espacio
+            freeMode = !freeMode; 
             if (!freeMode)
                 CenterAtPlayer();
         }
@@ -74,13 +74,11 @@ public class CameraMovement : MonoBehaviour
         int w = Screen.width;
         int h = Screen.height;
 
-        // Movimiento horizontal
         if (mp.x < w * hScreenPercentage)
             transform.position -= new Vector3(1, 0, 0) * movementSpeed * Time.deltaTime;
         else if (mp.x > w - w * hScreenPercentage)
             transform.position += new Vector3(1, 0, 0) * movementSpeed * Time.deltaTime;
 
-        // Movimiento vertical
         if (mp.y < h * vScreenPercentage)
             transform.position -= new Vector3(0, 0, 1) * movementSpeed * Time.deltaTime;
         else if (mp.y > h - h * vScreenPercentage)
