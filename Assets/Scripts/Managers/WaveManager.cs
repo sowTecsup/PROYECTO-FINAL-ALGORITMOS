@@ -6,20 +6,20 @@ public class WaveManager : MonoBehaviour
 {
     public static WaveManager Instance;
 
-    [Header("⏱️ Tiempos de fases")]
+    [Header("Tiempos de fases")]
     public float preparationTime = 15f;
     public float waveDuration = 60f;
 
-    [Header("⚔️ Generadores de enemigos")]
+    [Header("Generadores de enemigos")]
     public EnemySpawner[] spawners;
 
-    [Header("🕐 UI del tiempo")]
+    [Header("UI del tiempo")]
     public TextMeshProUGUI timerText;
 
-    [Header("📈 Dificultad")]
+    [Header("Dificultad")]
     public int incrementoPorOleada = 2;
 
-    [Header("👑 Mini Jefe")]
+    [Header("Mini Jefe")]
     public GameObject miniJefePrefab;          
     public Transform puntoMiniJefe;           
     public int oleadaMiniJefe = 3;             
@@ -46,7 +46,7 @@ public class WaveManager : MonoBehaviour
         {
             isWaveActive = false;
             currentWave++;
-            Debug.Log($"🔵 Preparación antes de la oleada {currentWave}");
+            Debug.Log($"Preparación antes de la oleada {currentWave}");
             SetSpawnersActive(false);
 
             timer = preparationTime;
@@ -58,7 +58,7 @@ public class WaveManager : MonoBehaviour
             }
 
             isWaveActive = true;
-            Debug.Log($"🟢 Comienza la oleada {currentWave}");
+            Debug.Log($"Comienza la oleada {currentWave}");
 
             for (int i = 0; i < spawners.Length; i++)
             {
@@ -80,7 +80,7 @@ public class WaveManager : MonoBehaviour
                 timer -= Time.deltaTime;
                 yield return null;
             }
-            Debug.Log($"🟠 Oleada {currentWave} finalizada");
+            Debug.Log($"Oleada {currentWave} finalizada");
             SetSpawnersActive(false);
         }
     }
@@ -128,19 +128,6 @@ public class WaveManager : MonoBehaviour
             int minutos = Mathf.FloorToInt(tiempo / 60);
             int segundos = Mathf.FloorToInt(tiempo % 60);
             timerText.text = $"{fase} {currentWave}\n{minutos:00}:{segundos:00}";
-        }
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            GameObject[] enemigos = GameObject.FindGameObjectsWithTag("Enemy");
-            for (int i = 0; i < enemigos.Length; i++)
-            {
-                Destroy(enemigos[i]);
-            }
-            Debug.Log("Todos los enemigos destruidos (modo test)");
         }
     }
 
