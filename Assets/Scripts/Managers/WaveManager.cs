@@ -103,7 +103,7 @@ public class WaveManager : MonoBehaviour
             spawnPos = Vector3.zero;
 
         GameObject jefe = Instantiate(miniJefePrefab, spawnPos, Quaternion.identity);
-        Debug.Log($" Mini Jefe generado en oleada {currentWave}");
+        Debug.Log($"Mini Jefe generado en oleada {currentWave}");
 
         EnemyMovement mov = jefe.GetComponent<EnemyMovement>();
         if (mov != null && spawners.Length > 0)

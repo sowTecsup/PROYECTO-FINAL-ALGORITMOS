@@ -488,11 +488,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d417d358f558754a99c554d1bdb7fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3770319924020552060, guid: def01073c3d96824e9222f441655fb8f, type: 3}
   player: {fileID: 2019222667}
-  enemigosPorGrupo: 7
-  intervaloGeneracion: 20
-  radioSpawn: 10
+  endPoint: {fileID: 972138180}
+  enemyMeleePrefab: {fileID: 3770319924020552060, guid: def01073c3d96824e9222f441655fb8f, type: 3}
+  meleePorGrupo: 3
+  enemyRangedPrefab: {fileID: 376029704300002237, guid: 5182293bcf6e57a41965887e4ded57f0, type: 3}
+  rangedPorGrupo: 2
+  enemyMiniTankPrefab: {fileID: 974820351747600714, guid: ddacb62083411ea4e8270a412f87bc1f, type: 3}
+  miniTankPorGrupo: 1
+  radioSpawn: 7
+  intervaloEntreGrupos: 20
+  intervaloEntreEnemigos: 1
 --- !u!1001 &229526385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1096,6 +1102,37 @@ MonoBehaviour:
   hScreenPercentage: 0.1
   vScreenPercentage: 0.1
   player: {fileID: 2019222667}
+--- !u!1 &388706086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 388706087}
+  m_Layer: 0
+  m_Name: Point3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &388706087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388706086}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34.889275, y: 36.344147, z: 17.887054}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 655565123}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &399799994
 GameObject:
   m_ObjectHideFlags: 0
@@ -2037,6 +2074,40 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c20f38a24e061f74d851d08eae23ff7d, type: 3}
+--- !u!1 &655565122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 655565123}
+  m_Layer: 0
+  m_Name: EndPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &655565123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655565122}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 39.110725, y: -36.344147, z: -217.88705}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 972138180}
+  - {fileID: 1431828797}
+  - {fileID: 388706087}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &658692595
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,11 +2152,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d417d358f558754a99c554d1bdb7fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3770319924020552060, guid: def01073c3d96824e9222f441655fb8f, type: 3}
   player: {fileID: 2019222667}
-  enemigosPorGrupo: 7
-  intervaloGeneracion: 20
+  endPoint: {fileID: 388706087}
+  enemyMeleePrefab: {fileID: 3770319924020552060, guid: def01073c3d96824e9222f441655fb8f, type: 3}
+  meleePorGrupo: 0
+  enemyRangedPrefab: {fileID: 376029704300002237, guid: 5182293bcf6e57a41965887e4ded57f0, type: 3}
+  rangedPorGrupo: 1
+  enemyMiniTankPrefab: {fileID: 974820351747600714, guid: ddacb62083411ea4e8270a412f87bc1f, type: 3}
+  miniTankPorGrupo: 0
   radioSpawn: 10
+  intervaloEntreGrupos: 20
+  intervaloEntreEnemigos: 0.5
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2914,6 +2991,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967037182}
   m_CullTransparentMesh: 1
+--- !u!1 &972138179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 972138180}
+  m_Layer: 0
+  m_Name: Point1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &972138180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972138179}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 35.889275, y: 36.344147, z: -56.112946}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 655565123}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &983406975
 GameObject:
   m_ObjectHideFlags: 0
@@ -3208,11 +3316,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d417d358f558754a99c554d1bdb7fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3770319924020552060, guid: def01073c3d96824e9222f441655fb8f, type: 3}
   player: {fileID: 2019222667}
-  enemigosPorGrupo: 7
-  intervaloGeneracion: 20
+  endPoint: {fileID: 1431828797}
+  enemyMeleePrefab: {fileID: 3770319924020552060, guid: def01073c3d96824e9222f441655fb8f, type: 3}
+  meleePorGrupo: 0
+  enemyRangedPrefab: {fileID: 376029704300002237, guid: 5182293bcf6e57a41965887e4ded57f0, type: 3}
+  rangedPorGrupo: 1
+  enemyMiniTankPrefab: {fileID: 974820351747600714, guid: ddacb62083411ea4e8270a412f87bc1f, type: 3}
+  miniTankPorGrupo: 0
   radioSpawn: 10
+  intervaloEntreGrupos: 20
+  intervaloEntreEnemigos: 0.5
 --- !u!1 &1338163147
 GameObject:
   m_ObjectHideFlags: 0
@@ -3349,6 +3463,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338163147}
   m_CullTransparentMesh: 1
+--- !u!1 &1431828796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1431828797}
+  m_Layer: 0
+  m_Name: Point2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1431828797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431828796}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 47.889275, y: 36.344147, z: -24.112946}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 655565123}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1479239922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3475,8 +3620,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11ce2543656dca4e9546163851bc4f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preparationTime: 5
-  waveDuration: 50
+  preparationTime: 3
+  waveDuration: 180
   spawners:
   - {fileID: 207259742}
   - {fileID: 1208349521}
@@ -5381,3 +5526,4 @@ SceneRoots:
   - {fileID: 2098788853}
   - {fileID: 129005584}
   - {fileID: 466609889}
+  - {fileID: 655565123}
