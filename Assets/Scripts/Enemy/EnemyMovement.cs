@@ -1,6 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using System;
 
+
+public enum EnemyState
+{ 
+    Walking, 
+    Chasing,
+    Attacking
+}
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyMovement : MonoBehaviour
 {
@@ -17,13 +25,13 @@ public class EnemyMovement : MonoBehaviour
 
     private NavMeshAgent agent;
 
-    private enum EnemyState { Walking, Chasing, Attacking }
+
     private EnemyState currentState;
 
     private Vector3 walkDestination;
     private bool hasWalkDestination = false;
 
-    public event System.Action<GameObject> OnDeath;
+    public event Action<GameObject> OnDeath;
 
     void Awake()
     {

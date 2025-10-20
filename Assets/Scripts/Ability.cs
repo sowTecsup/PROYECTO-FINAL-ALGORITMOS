@@ -21,6 +21,7 @@ public class Ability
         MaxLevel = maxLevel;
     }
 
+    //public bool CanCast() => !Locked && Level > 0 && Time.time >= lastCastTime + Cooldown;
     public bool CanCast()
     {
         return !Locked && Level > 0 && Time.time >= lastCastTime + Cooldown;
@@ -33,22 +34,22 @@ public class Ability
             lastCastTime = Time.time;
             Debug.Log($" {Name} lanzada (Nivel {Level})");
             OnCast?.Invoke();
+            return;
         }
-        else
+
+        if (Locked || Level == 0)
         {
-            if (Locked || Level == 0)
-            {
-                Debug.Log($" {Name} está bloqueada.");
-            }
-            else
-            {
-                float remaining = (lastCastTime + Cooldown) - Time.time;
-                Debug.Log($" {Name} en cooldown. Faltan {remaining:F1}s");
-            }
+            Debug.Log($" {Name} está bloqueada.");
+            return;
         }
+        
+        float remaining = (lastCastTime + Cooldown) - Time.time;
+        Debug.Log($" {Name} en cooldown. Faltan {remaining:F1}s");
+        
+        
     }
 
-    public void Upgrade()
+    public void Upgrade()//->considerar overhull a sistema con grafos
     {
         if (Locked)
         {

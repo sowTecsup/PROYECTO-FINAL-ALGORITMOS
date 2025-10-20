@@ -95,6 +95,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "CheatCodeK",
+                    "type": "Button",
+                    "id": "ad2bcb47-7091-4eac-8d84-294434206c76",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -295,6 +304,17 @@
                     "action": "UpgradeR",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "4fba44de-f513-4cb9-8abf-162f1185a868",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CheatCodeK",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

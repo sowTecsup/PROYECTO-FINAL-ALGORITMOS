@@ -1,5 +1,13 @@
 using UnityEngine;
 
+public enum BuildType
+{
+    Torreta,
+    Bombardera,
+    Balleta,
+    Granja
+}
+
 public class BuildSlot : MonoBehaviour
 {
     [Header("Slot State")]
@@ -9,6 +17,9 @@ public class BuildSlot : MonoBehaviour
     [Header("Visuals")]
     public Color freeColor = Color.green;
     public Color occupiedColor = Color.red;
+
+    public BuildType buildType;
+    public int Cost;
 
     private Renderer rend;
 
@@ -26,6 +37,16 @@ public class BuildSlot : MonoBehaviour
             isOccupied = true;
             UpdateColor();
         }
+    }
+
+    public void ShowInfo()
+    {
+
+    }
+    public void PlaceTower(BuildType buildType)
+    {
+        //->buuild manager GameObject tower = Instantiate(GetBuildPrefab(buildType))
+
     }
 
     void UpdateColor()

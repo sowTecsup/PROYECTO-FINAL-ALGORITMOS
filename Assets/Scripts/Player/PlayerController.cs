@@ -40,7 +40,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public bool IsMoving()
+    // public bool IsMoving => agent.hasPath && agent.remainingDistance > agent.stoppingDistance;
+    public bool IsMoving() 
     {
         return agent.hasPath && agent.remainingDistance > agent.stoppingDistance;
     }

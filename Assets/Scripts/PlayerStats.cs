@@ -53,4 +53,15 @@ public class PlayerStats : MonoBehaviour
         }
         return false;
     }
+
+    /*->PlayerManager
+     * Platyer camera
+     * Player movement
+     * player stats
+     * player abilities
+     * 
+     * 
+     * 
+     * 
+     */
 }

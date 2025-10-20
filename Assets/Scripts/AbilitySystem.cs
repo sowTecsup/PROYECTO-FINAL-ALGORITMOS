@@ -2,8 +2,19 @@
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
 
+public enum AbilityType
+{
+    None,
+    PrimaryAb,
+    SecondaryAb,
+    ThirdAb,
+    Ultimate
+}
+
 public class AbilitySystem : MonoBehaviour
 {
+    //->
+    public Dictionary<AbilityType, Ability> abilities2 = new Dictionary<AbilityType, Ability>();
     public Dictionary<string, Ability> abilities = new Dictionary<string, Ability>();
     private PlayerStats playerStats;
 
